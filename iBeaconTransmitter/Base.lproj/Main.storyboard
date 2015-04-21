@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,11 +16,93 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Fc-1b-UIl">
+                                <rect key="frame" x="198" y="282" width="205" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="0mQ-pb-gHw"/>
+                                    <constraint firstAttribute="width" constant="205" id="3Cu-6z-BQb"/>
+                                </constraints>
+                                <state key="normal" image="BroadcastButton">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="qqL-Qf-C3i"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4Q-MK-gnZ">
+                                <rect key="frame" x="20" y="205" width="560" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="UFY-cV-DJk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="UDID" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3sj-Vg-s6y">
+                                <rect key="frame" x="20" y="50" width="560" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="qIV-S3-oxG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="m19-iV-rf4"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Major" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ssz-ZB-Obg">
+                                <rect key="frame" x="20" y="93" width="560" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="rov-df-uTA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="JqE-iv-QUe"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Minor" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oU9-x1-3sJ">
+                                <rect key="frame" x="20" y="136" width="560" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="Kp5-Bg-v61"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="v4h-Fk-VEK"/>
+                                </connections>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2Fc-1b-UIl" firstAttribute="top" secondItem="w4Q-MK-gnZ" secondAttribute="bottom" constant="56" id="1Gn-vh-eCA"/>
+                            <constraint firstItem="ssz-ZB-Obg" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="1iz-Mx-71b"/>
+                            <constraint firstAttribute="trailing" secondItem="w4Q-MK-gnZ" secondAttribute="trailing" constant="20" id="4Bi-7d-Qd6"/>
+                            <constraint firstItem="3sj-Vg-s6y" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="30" id="6SW-fb-stc"/>
+                            <constraint firstAttribute="centerX" secondItem="2Fc-1b-UIl" secondAttribute="centerX" id="7fL-3W-SSD"/>
+                            <constraint firstItem="3sj-Vg-s6y" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="E19-W6-TZe"/>
+                            <constraint firstItem="oU9-x1-3sJ" firstAttribute="top" secondItem="ssz-ZB-Obg" secondAttribute="bottom" constant="8" id="Ekf-Vj-IU3"/>
+                            <constraint firstItem="w4Q-MK-gnZ" firstAttribute="top" secondItem="oU9-x1-3sJ" secondAttribute="bottom" constant="34" id="QvV-ZK-iWm"/>
+                            <constraint firstItem="ssz-ZB-Obg" firstAttribute="top" secondItem="3sj-Vg-s6y" secondAttribute="bottom" constant="8" id="T2X-Z1-H6I"/>
+                            <constraint firstItem="oU9-x1-3sJ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="X0c-o7-BU0"/>
+                            <constraint firstAttribute="trailing" secondItem="ssz-ZB-Obg" secondAttribute="trailing" constant="20" id="fy2-kd-V6J"/>
+                            <constraint firstAttribute="trailing" secondItem="oU9-x1-3sJ" secondAttribute="trailing" constant="20" id="iwW-5r-DHj"/>
+                            <constraint firstItem="w4Q-MK-gnZ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="vWT-Vr-3B4"/>
+                            <constraint firstAttribute="trailing" secondItem="3sj-Vg-s6y" secondAttribute="trailing" constant="20" id="yfS-uW-oZ6"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="majorTextField" destination="ssz-ZB-Obg" id="mko-g5-qzx"/>
+                        <outlet property="minorTextField" destination="oU9-x1-3sJ" id="i0B-9H-onY"/>
+                        <outlet property="statusLabel" destination="w4Q-MK-gnZ" id="IdZ-tX-jEz"/>
+                        <outlet property="udidTextField" destination="3sj-Vg-s6y" id="yDE-jd-edr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="BroadcastButton" width="150" height="150"/>
+    </resources>
 </document>
